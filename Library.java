@@ -10,9 +10,15 @@ public class Library {
 
     // Funcionalidad para agregar un libro
     public void addBook(Book book) {
-        books.add(book);
-        System.out.println("Libro agregado: " + book);
+    for (Book b : books) {
+        if (b.getTitle().equalsIgnoreCase(book.getTitle()) && b.getAuthor().equalsIgnoreCase(book.getAuthor())) {
+            System.out.println("El libro ya existe en la biblioteca.");
+            return;
+        }
     }
+    books.add(book);
+    System.out.println("Libro agregado: " + book);
+}
 
     // Funcionalidad para listar todos los libros
     public void listBooks() {
