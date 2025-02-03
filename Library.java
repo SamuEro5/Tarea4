@@ -22,7 +22,7 @@ public class Library {
         }
     }
 
-    // Funcionalidad para buscar un libro por título
+    // Funcionalidad para buscar un libro por título.
     public Book findBookByTitle(String title) {
         for (Book book : books) {
             if (book.getTitle().equalsIgnoreCase(title)) {
