@@ -32,6 +32,7 @@ public class Library {
         return null;
     }
 
+
 // Funcionalidad para buscar por autor
 public Book findBookByAuthor(String author) {
 for (Book book : books) {
@@ -41,5 +42,20 @@ return book;
 }
 return null;
 }
-
+//Funcionalidad para elimnar un libro
+public void removeBook(String title, String author) {
+Book bookToRemove = null;
+for (Book book : books) {
+if (book.getTitle().equalsIgnoreCase(title) && book.getAuthor().equalsIgnoreCase(author)) {
+bookToRemove = book;
+break;
+}
+}
+if (bookToRemove != null) {
+books.remove(bookToRemove);
+System.out.println("Libro eliminado: " + bookToRemove);
+} else {
+System.out.println("Libro no encontrado.");
+}
+}
 }
